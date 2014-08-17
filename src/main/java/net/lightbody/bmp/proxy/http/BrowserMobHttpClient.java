@@ -858,12 +858,7 @@ public class BrowserMobHttpClient {
     }
 
 	private boolean hasTextualContent(String contentType) {
-		return contentType != null && contentType.startsWith("text/") ||
-				contentType.startsWith("application/x-javascript") ||
-				contentType.startsWith("application/javascript")  ||
-				contentType.startsWith("application/json")  ||
-				contentType.startsWith("application/xml")  ||
-				contentType.startsWith("application/xhtml+xml");
+        return false; // HACK: because of wrong response of http://www.letu.ru/fonts/PTS55F_W.woff with text/plain
 	}
 
 	private void setBinaryContentOfEntry(HarEntry entry, ByteArrayOutputStream copy) {
